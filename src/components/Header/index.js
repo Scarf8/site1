@@ -16,7 +16,7 @@ export default function Header() {
                 </a>
 
                 <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                    <li> <Link class="navbar navbar-dark bg-inverse" to='/'>Home</Link> </li>
+                    <li> <Link class="nav-link active" to='/'>Home</Link> </li>
                     
             
                 </ul>
