@@ -16,7 +16,7 @@ function Details() {
 
 
     useEffect(() => {
-        fetch(https://my-json-server.typicode.com/marycamila184/moviedetails/moviedetails/${id})
+        fetch(`https://my-json-server.typicode.com/marycamila184/moviedetails/moviedetails/${id}`)
             .then((response) => response.json())
             .then((data) => {
                 if (data.length === 0) {
@@ -25,7 +25,7 @@ function Details() {
                     setMovies(data);
                     setData(true);
                 }
-
+                
             });
     }, [id]);
 
@@ -56,8 +56,7 @@ function Details() {
                             <h1>Título original: {movies.titulo}</h1>
                             <span> Ano: {movies.ano}</span>
                             <span> Nota: {movies.nota}</span>
-                            <span> Direção: Jon Favreau  Roteiro   </span>
-                            <span> Roteiro: Matt Holloway, Mark Fergus</span>
+                     
                             <Assistido
                                 assistido={movies.assistido}
                                 onClick={handleAssistidoClick}

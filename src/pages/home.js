@@ -97,7 +97,7 @@ function Home() {
                 {sortedMovies.filter(movie => movie.titulo.toLowerCase().includes(searchTerm.toLowerCase())).map(movie => {
                     return (
                         <Movie key={movie.id}>
-                            <Link to={`/details/${movie.id}`}>
+                            <Link to={`/detalhes/${movie.id}`}>
                                 <img src={`${movie.poster}`} alt={movie.titulo} />
                             </Link>
                             <span>{movie.titulo}</span>
