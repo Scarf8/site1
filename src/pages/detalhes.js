@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Container, Fina } from "./style";
+import comentarios from "../components/Comments/index";
 
 
 // import comentarios from '../../components/Comments/index';
@@ -10,7 +11,6 @@ import Assistido from "../components/Buttonsign/assistido";
 function Details() {
     const { id } = useParams();
     const [movies, setMovies] = useState({});
-    const [movie, setMovie] = useState({});
     const [data, setData] = useState(false);
     const [notFound, setNotFound] = useState(false);
 
@@ -69,9 +69,18 @@ function Details() {
                             </Link>
                         </div>
                     </div>
-                    {/* <Fina>
+
+
+
+
+
+
+
+
+                 
+                    <Fina>
                         <div>
-                            <h2>Comentários:</h2>
+                        <comentarios />
                             {comentarios.length > 0 ? (
                                 comentarios.map((comentario) => {
                                     if (comentario.id_filme === movies.id) {
@@ -91,7 +100,7 @@ function Details() {
                                 <p>Sem comentários para esse filme.</p>
                             )}
                         </div>
-                    </Fina> */}
+                    </Fina>
                 </Container>
             ) : (
                 <p>Filme não encontrado.</p>
