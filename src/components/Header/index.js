@@ -1,7 +1,14 @@
+
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
+
 import "./header.css";
-import { Link } from 'react-router-dom';
 
 export default function Header() {
+
+    const location = useLocation();
+    const url = location.pathname;
+    const showButton = url !== "/cadastro";
     return (
         <div className="container">
             <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
@@ -14,10 +21,15 @@ export default function Header() {
                     
             
                 </ul>
-
                 <div>
-                <Link className="nav-link" to='/cadastro'><button type="button" class="btn btn-dark">Cadastrar</button></Link>
-                </div>
+                {showButton && (
+                    <Link
+                        className="nav-link" to='/cadastro'>
+                        <button className='nav btn btn-dark' type="button"> Cadastrar</button>
+                    </Link>
+                )}
+
+            </div>
             </header>
         </div>
     )
