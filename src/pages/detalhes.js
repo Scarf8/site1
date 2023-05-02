@@ -56,6 +56,8 @@ function Details() {
                             <h1>Título original: {movies.titulo}</h1>
                             <span> Ano: {movies.ano}</span>
                             <span> Nota: {movies.nota}</span>
+                            <span> Sinopse: {movies.sinopse}</span>
+
                      
                             <Assistido
                                 assistido={movies.assistido}
