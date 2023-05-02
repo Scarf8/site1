@@ -1,10 +1,14 @@
+import './assistido.css';
 
 function Assistido(props) {
     return (
-        <button className="move" onClick={() => props.onClick(props.id)}>
-            {props.assistido ? "Assistir Novamente" : "Assistir"}
-        </button>
+     <button>
+        {
+            props.assistido ? "Assistir Novamente": "Assistir"
+        }
+     </button> 
+     
     );
-}
-
-export default Assistido;
+  }
+  
+  export default Assistido;

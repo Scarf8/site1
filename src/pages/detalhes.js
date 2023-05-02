@@ -2,10 +2,8 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { Container, Fina } from "./style";
 import comentarios from "../components/Comments/index";
-
-
-// import comentarios from '../../components/Comments/index';
 import Assistido from "../components/Buttonsign/assistido";
+import Title from "../components/Title";
 
 
 function Details() {
@@ -32,7 +30,16 @@ function Details() {
     if (!data) {
         return <p>Carregando...</p>;
     }
-
+    else if (!movies.id || notFound) {
+        return (
+          <>
+            <p>Filme não encontrado.</p>
+            <Link to="/">
+              <button>Voltar</button>
+            </Link>
+          </>
+        );
+      }
 
 
     const handleAssistidoClick = (id) => {
@@ -46,7 +53,9 @@ function Details() {
 
         <div>
             <Fina>
-                <h1> Detalhes</h1>
+            <Title
+                        title={"Detalhes"}
+                        />
             </Fina>
             {movies ? (
                 <Container>
@@ -55,8 +64,9 @@ function Details() {
                         <div className="details">
                             <h1>Título original: {movies.titulo}</h1>
                             <span> Ano: {movies.ano}</span>
-                            <span> Nota: {movies.nota}</span>
+                            <span> Nota: Nota não consta na API.</span>
                             <span> Sinopse: {movies.sinopse}</span>
+                            <br />
 
                      
                             <Assistido
@@ -64,18 +74,12 @@ function Details() {
                                 onClick={handleAssistidoClick}
                                 id={movies.id}
                             />
+                            <br />
                             <Link to="/">
-                                <button variant="primary">Voltar</button>
+                                <button>Voltar</button>
                             </Link>
                         </div>
                     </div>
-
-
-
-
-
-
-
 
                  
                     <Fina>

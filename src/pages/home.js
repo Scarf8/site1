@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import './home.css'
 import { useState } from 'react';
 import { Container, MovieList, OrderByContainer } from "../components/Style/style";
+import Title from '../components/Title';
 
 
 function Home() {
@@ -71,6 +72,9 @@ function Home() {
         <Container>
         <div>
             <OrderByContainer>
+            <Title
+                        title={"Catálogo de Filmes"}
+                        />
                 <div className="d-flex justify-content-between mr-md-1">
                     <div className="col-md-3">
                         <div className="form-group">

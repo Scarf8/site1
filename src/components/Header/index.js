@@ -1,4 +1,3 @@
-
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { useLocation } from "react-router-dom";
 
@@ -17,7 +16,7 @@ export default function Header() {
                 </a>
 
                 <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                    <li> <Link className="nav-link" to='/'>Home</Link> </li>
+                    <li> <Link class="navbar navbar-dark bg-inverse" to='/'>Home</Link> </li>
                     
             
                 </ul>
@@ -25,7 +24,7 @@ export default function Header() {
                 {showButton && (
                     <Link
                         className="nav-link" to='/cadastro'>
-                        <button className='nav btn btn-dark' type="button"> Cadastrar</button>
+                        <button> Cadastrar</button>
                     </Link>
                 )}
 
